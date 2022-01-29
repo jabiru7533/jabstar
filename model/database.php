@@ -13,9 +13,9 @@ function open_database()
 {
     global $db;
 	
-	$dsn = 'mysql:host=localhost;dbname=epiz_30896286_jabstar_db';
-    $username = 'epiz_30896286';
-    $password = 'Dcaz1957';
+	$dsn = 'mysql:host=localhost;dbname=jabstar_db';
+    	$username = 'root';
+   	$password = '';
 
     try {
         $db = new PDO($dsn, $username, $password);
