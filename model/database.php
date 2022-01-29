@@ -36,7 +36,7 @@ OUTPUT: gps coordinates of that waypoint
 	global $db;
 	
 	$query = 'SELECT wp_lat, wp_lon 
-			  FROM jswaypoints
+			  FROM JSWAYPOINTS
               WHERE wp_name = :wp_name';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':wp_name', $wp_name);
