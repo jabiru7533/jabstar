@@ -13,9 +13,9 @@ function open_database()
 {
     global $db;
 	
-	$dsn = 'mysql:host=localhost;dbname=epiz_30896286_jabstar_db';
-    $username = 'epiz_30896286';
-    $password = 'Dcaz1957';
+	$dsn = 'mysql:host=localhost;dbname=jabstar_db';
+    	$username = 'root';
+   	$password = '';
 
     try {
         $db = new PDO($dsn, $username, $password);
@@ -36,7 +36,7 @@ OUTPUT: gps coordinates of that waypoint
 	global $db;
 	
 	$query = 'SELECT wp_lat, wp_lon 
-			  FROM jswaypoints
+			  FROM JSWAYPOINTS
               WHERE wp_name = :wp_name';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':wp_name', $wp_name);
