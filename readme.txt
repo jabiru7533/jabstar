@@ -47,7 +47,7 @@ TO RUN PROG:		Open the XAMPP control panel, start the Apache and MySQL services,
 
 TO DO LIST:		1) Implement input validation / error handelling.
 			2) Store login status in session cookie so that the 'Home' navigation link doesn't cancel / reset login status ?
-			3) Improve front end (javascript, responsive web design ?).
+			3) Improve front end (javascript ?, enhance existing minimal amount of responsive web design ?).
 			4) Can a 2 dimensional array be passed back through a hidden form field (this would improve the code in the database storage functions) ?			
 
 

@@ -39,7 +39,7 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 	</header>
 
 <!-- NAVIGATION LINKS / LOGIN / REGISTER-->
-	
+
 	<nav>
 		<ul>	
 			<li><a href="index.php">Home&nbsp;</a></li>
@@ -48,15 +48,27 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 			<li><a href="view/gallery.php">Images&nbsp;</a></li>
 			<li><a href="view/contact.php">Contact&nbsp;</a></li>				
 		</ul>	
-			
+	</nav>
+	
 		<?php global $login_status; if ($login_status == 1) {?>
 			
 		<form class="login" action="." method="post">					
 			<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username&nbsp;</label>
-			<input type="text" name="username">
+			<input type="text" size="10" name="username">
 			<label>&nbsp;Password&nbsp;</label>
-			<input type="password" name="password">		
+			<input type="password" size="10" name="password">		
 			<label>&nbsp;</label>
+			<input type="submit" name="action" value="Login">	
+			<label>&nbsp;</label>
+			<input type="submit" name="action" value="Register">	
+		</form>
+		
+		<form class="login_mobile" action="." method="post">					
+			<label>Username&nbsp;</label>
+			<input type="text" name="username"><br><br>
+			<label>Password&nbsp;&nbsp;</label>
+			<input type="password" name="password"><br><br>		
+			<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 			<input type="submit" name="action" value="Login">	
 			<label>&nbsp;</label>
 			<input type="submit" name="action" value="Register">	
@@ -69,18 +81,26 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 		</form>
 
 		<?php }?>
-				
-	</nav>	
-	
+			
 	<main>
-		<br><br>
+		<br><br>		
+	
 		<h1>Aviation Fuel Stop Planner (AUSTRALIA) </h1>
 		<h3>Contains a database of 248 airports currently supplying AVGAS (correct as of 2/12/2021)</h3> 		
 	
 <!-- MAIN IMAGE -->	
 
-		<img  src="view/images/header4.jpg" alt="Header PIC"> 
-		<br><br>		
+		<picture>
+			<source 
+				media="(max-width: 1279px) and (min-width: 769px)"
+				srcset="view/images/tablet2.jpg">
+			<source 
+				media="(max-width: 768px)"
+				srcset="view/images/mobile3.jpg">
+			<img 
+				src="view/images/header4.jpg" 
+				alt="main image">
+		</picture>
 		
 <!--SCREEN 0: ROUTE GENERATOR INPUT-->
 	
@@ -88,7 +108,7 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 		{ 
 		?>		
 
-			<form action="." method="post">
+			<form class="input_action" action="." method="post">
 			
 				<p>
 					<label>Departure&nbsp;
@@ -343,8 +363,8 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 						<option value="YARRAM">
 						<option value="YARRAWONGA">
 						<option value="YOUNG">	
-					</datalist>	
-	
+					</datalist>								
+						
 					<label>&nbsp;Destination&nbsp;
 						<input list="destination" size="30" name="destination" autocomplete="off" value=" ">
 					</label>			
@@ -599,8 +619,8 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 						<option value="YOUNG">				
 					</datalist>	
 						
-					<label>&nbsp;Aircraft Range (Nautical Miles)&nbsp;</label>
-					<input type="text" name="range" value="200" autocomplete="off">	
+					<label>&nbsp;Aircraft Range (nm)&nbsp;</label>
+					<input type="text" size="4" name="range" value="200" autocomplete="off">	
 						
 					<br><br>
 						
@@ -618,6 +638,546 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 				</p>
 			
 			</form>
+			
+			<form class="input_action_mobile" action="." method="post">
+			
+				<p>
+					<label>Departure&nbsp;&nbsp;&nbsp;
+						<input list="departure" size ="30" name="departure" autocomplete="off" value=" ">
+					</label>		
+			
+					<datalist id="departure">
+						<option value="ADELAIDE/PARAFIELD">
+						<option value="ADELS GROVE">
+						<option value="ALBANY">
+						<option value="ALBURY">
+						<option value="ALDINGA">
+						<option value="ALICE SPRINGS">
+						<option value="ARMIDALE">
+						<option value="ATHERTON">
+						<option value="AYERS ROCK">
+						<option value="AYR">
+						<option value="BACCHUS MARSH">
+						<option value="BAIRNSDALE">
+						<option value="BALLARAT">
+						<option value="BALLINA/BYRON GATEWAY">
+						<option value="BARCALDINE">
+						<option value="BARWON HEADS/GEELONG">
+						<option value="BATHURST">
+						<option value="BENALLA">
+						<option value="BENDIGO">
+						<option value="BIRDSVILLE">
+						<option value="BLACKALL">
+						<option value="BOONAH">
+						<option value="BORROLOOLA">
+						<option value="BOULIA">
+						<option value="BOURKE">
+						<option value="BRISBANE WEST WELLCAMP">
+						<option value="BRISBANE/ARCHERFIELD">
+						<option value="BROKEN HILL">
+						<option value="BROOME">
+						<option value="BUNBURY">
+						<option value="BUNDABERG">
+						<option value="BURKETOWN">
+						<option value="BUSSELTON">
+						<option value="CABOOLTURE">
+						<option value="CADNEY HOMESTEAD">
+						<option value="CAIGUNA">
+						<option value="CAIRNS">
+						<option value="CALOUNDRA">
+						<option value="CALVIN GROVE">
+						<option value="CAMDEN HAVEN">
+						<option value="CAMDEN">							
+						<option value="CANBERRA">
+						<option value="CARNARVON">
+						<option value="CEDUNA">
+						<option value="CERES">
+						<option value="CESSNOCK">
+						<option value="CHARLEVILLE">
+						<option value="CHARTERS TOWERS">
+						<option value="CHILLAGOE">
+						<option value="CHINCHILLA">
+						<option value="CLARE VALLEY">
+						<option value="CLERMONT">
+						<option value="CLIFTON">
+						<option value="CLONCURRY">
+						<option value="COBAR">
+						<option value="COBDEN">
+						<option value="COCKATOO ISLAND">
+						<option value="COEN">
+						<option value="COFFS HARBOUR">
+						<option value="COLAC">
+						<option value="COLDSTREAM">
+						<option value="COOBER PEDY">
+						<option value="COOKTOWN">
+						<option value="COONAMBLE">
+						<option value="COOTAMUNDRA">
+						<option value="COWRA">
+						<option value="CROYDON">
+						<option value="CUNNAMULLA">
+						<option value="DARWIN">
+						<option value="DENILIQUIN">
+						<option value="DERBY">
+						<option value="DEVONPORT">
+						<option value="DONNINGTON AIRPARK">
+						<option value="DUBBO">
+						<option value="DUNWICH">
+						<option value="ECHUCA">
+						<option value="ELCHO ISLAND">
+						<option value="ELROSE">
+						<option value="EMERALD">
+						<option value="EMKAYTEE">
+						<option value="ESPERANCE">
+						<option value="EUROA">
+						<option value="FLINDERS ISLAND">
+						<option value="FORREST">
+						<option value="GAWLER">
+						<option value="GAYNDAH">
+						<option value="GEORGETOWN (QLD)">
+						<option value="GERALDTON">
+						<option value="GLADSTONE">
+						<option value="GOLD COAST">
+						<option value="GOOLWA">
+						<option value="GOONDIWINDI">
+						<option value="GOULBURN">
+						<option value="GOVE">
+						<option value="GRIFFITH">
+						<option value="GROOTE EYLANDT">
+						<option value="GUNNEDAH">
+						<option value="GYMPIE">
+						<option value="HALLS CREEK">
+						<option value="HAMILTON ISLAND">
+						<option value="HAMILTON">
+						<option value="HAWKER">
+						<option value="HAY">
+						<option value="HERVEY BAY">
+						<option value="HOBART/CAMBRIDGE">
+						<option value="HOOKER CREEK">
+						<option value="HORN ISLAND">
+						<option value="HORSHAM">
+						<option value="HUGHENDEN">
+						<option value="HUNGERFORD">
+						<option value="INGHAM">
+						<option value="INNAMINCKA TOWNSHIP">
+						<option value="INNAMINCKA">
+						<option value="INVERELL">
+						<option value="JABIRU">
+						<option value="JAMESTOWN">
+						<option value="JINDABYNE">
+						<option value="KALGOORLIE-BOULDER">
+						<option value="KALUMBURU">
+						<option value="KARRATHA">
+						<option value="KEMPSEY">
+						<option value="KERANG">
+						<option value="KINGAROY">
+						<option value="KUNUNURRA">
+						<option value="KYNETON">
+						<option value="LATROBE VALLEY">
+						<option value="LAUNCESTON">
+						<option value="LEIGH CREEK">
+						<option value="LEONGATHA">
+						<option value="LEONORA">
+						<option value="LETHBRIDGE AIRPORT">
+						<option value="LIGHTNING RIDGE">
+						<option value="LILYDALE">
+						<option value="LISMORE">
+						<option value="LOCKHART RIVER">
+						<option value="LONGREACH">
+						<option value="LORD HOWE ISLAND">
+						<option value="LYNDOCH">
+						<option value="MACKAY">
+						<option value="MAITLAND (NSW)">
+						<option value="MAITLAND (SA)">
+						<option value="MALLACOOTA">
+						<option value="MANGALORE">
+						<option value="MANINGRIDA">
+						<option value="MANJIMUP">
+						<option value="MAREEBA">
+						<option value="MARREE">
+						<option value="MARYBOROUGH (QLD)">
+						<option value="MCARTHUR RIVER MINE">
+						<option value="MEEKATHARRA">
+						<option value="MELBOURNE/ESSENDON">
+						<option value="MELBOURNE/MOORABBIN">
+						<option value="MELTON">
+						<option value="MERIMBULA">
+						<option value="MERREDIN">
+						<option value="MILDURA">
+						<option value="MOREE">
+						<option value="MORUYA">
+						<option value="MOUNT GAMBIER">
+						<option value="MOUNT ISA">
+						<option value="MOUNT KEITH">
+						<option value="MUDGEE">
+						<option value="MURRAY BRIDGE">
+						<option value="MURRAY FIELD">
+						<option value="MURWILLUMBAH">
+						<option value="NAGAMBIE-WIRRATE">
+						<option value="NARACOORTE">
+						<option value="NARRABRI">
+						<option value="NARRANDERA">
+						<option value="NARROMINE">
+						<option value="NEWMAN">
+						<option value="NHILL">
+						<option value="NORMANTON">
+						<option value="NORTHAM">
+						<option value="NORTHERN PENINSULA">
+						<option value="NULLARBOR MOTEL">
+						<option value="OAKEY">
+						<option value="ORANGE">
+						<option value="PARKES">
+						<option value="PENFIELD">
+						<option value="PERTH/JANDAKOT">
+						<option value="PETERBOROUGH/GREAT OCEAN ROAD">
+						<option value="PORT AUGUSTA">
+						<option value="PORT HEDLAND">
+						<option value="PORT LINCOLN">
+						<option value="PORT MACQUARIE">
+						<option value="PORT PIRIE">
+						<option value="PORTLAND">
+						<option value="PROSERPINE/WHITSUNDAY COAST">
+						<option value="PUNGALINA">
+						<option value="QUILPIE">							
+						<option value="REDCLIFFE">
+						<option value="RENMARK">
+						<option value="ROCKHAMPTON">
+						<option value="ROMA">
+						<option value="ROWSLEY/BROOKS LANDING">
+						<option value="RYLSTONE AIRPARK">
+						<option value="SCONE">
+						<option value="SHELLHARBOUR AIRPORT">
+						<option value="SHEPPARTON">
+						<option value="SHUTE HARBOUR/WHITSUNDAY">
+						<option value="SOMERSBY">
+						<option value="STAWELL">
+						<option value="SUNSHINE COAST">
+						<option value="SWAN HILL">
+						<option value="SYDNEY/BANKSTOWN">
+						<option value="TAMBO">
+						<option value="TAMWORTH">
+						<option value="TAREE">
+						<option value="TEMORA">
+						<option value="TENNANT CREEK">
+						<option value="THANGOOL">
+						<option value="THARGOMINDAH">
+						<option value="TIBOOBURRA">
+						<option value="TINDAL">
+						<option value="TOCUMWAL">
+						<option value="TOORADIN">
+						<option value="TOOWOOMBA">
+						<option value="TOWNSVILLE/TOWNSVILLE">
+						<option value="TRUSCOTT-MUNGALALU">
+						<option value="TUMUT">
+						<option value="TYABB">
+						<option value="VAN ROOK STATION">
+						<option value="VICTORIA RIVER DOWNS">
+						<option value="WAGGA WAGGA">
+						<option value="WALGETT">
+						<option value="WANGARATTA">
+						<option value="WARBURTON">
+						<option value="WARRACKNABEAL">
+						<option value="WARRNAMBOOL">
+						<option value="WARWICK">
+						<option value="WATTS BRIDGE">
+						<option value="WEDDERBURN">
+						<option value="WEIPA">
+						<option value="WENTWORTH">
+						<option value="WEST SALE">
+						<option value="WHITE CLIFFS">
+						<option value="WHITE GUM">
+						<option value="WHYALLA">
+						<option value="WILLIAM CREEK">
+						<option value="WINDORAH">
+						<option value="WINTON">
+						<option value="WUDINNA">
+						<option value="WYNYARD">
+						<option value="YARRAM">
+						<option value="YARRAWONGA">
+						<option value="YOUNG">	
+					</datalist>		
+
+					<br><br>	
+											
+					<label>&nbsp;Destination&nbsp;
+						<input list="destination" size="30" name="destination" autocomplete="off" value=" ">
+					</label>			
+	
+					<datalist id="destination">
+						<option value="ADELAIDE/PARAFIELD">
+						<option value="ADELS GROVE">
+						<option value="ALBANY">
+						<option value="ALBURY">
+						<option value="ALDINGA">
+						<option value="ALICE SPRINGS">
+						<option value="ARMIDALE">
+						<option value="ATHERTON">
+						<option value="AYERS ROCK">
+						<option value="AYR">
+						<option value="BACCHUS MARSH">
+						<option value="BAIRNSDALE">
+						<option value="BALLARAT">
+						<option value="BALLINA/BYRON GATEWAY">
+						<option value="BARCALDINE">
+						<option value="BARWON HEADS/GEELONG">
+						<option value="BATHURST">
+						<option value="BENALLA">
+						<option value="BENDIGO">
+						<option value="BIRDSVILLE">
+						<option value="BLACKALL">
+						<option value="BOONAH">
+						<option value="BORROLOOLA">
+						<option value="BOULIA">
+						<option value="BOURKE">
+						<option value="BRISBANE WEST WELLCAMP">
+						<option value="BRISBANE/ARCHERFIELD">
+						<option value="BROKEN HILL">
+						<option value="BROOME">
+						<option value="BUNBURY">
+						<option value="BUNDABERG">
+						<option value="BURKETOWN">
+						<option value="BUSSELTON">
+						<option value="CABOOLTURE">
+						<option value="CADNEY HOMESTEAD">
+						<option value="CAIGUNA">
+						<option value="CAIRNS">
+						<option value="CALOUNDRA">
+						<option value="CALVIN GROVE">
+						<option value="CAMDEN HAVEN">
+						<option value="CAMDEN">							
+						<option value="CANBERRA">
+						<option value="CARNARVON">
+						<option value="CEDUNA">
+						<option value="CERES">
+						<option value="CESSNOCK">
+						<option value="CHARLEVILLE">
+						<option value="CHARTERS TOWERS">
+						<option value="CHILLAGOE">
+						<option value="CHINCHILLA">
+						<option value="CLARE VALLEY">
+						<option value="CLERMONT">
+						<option value="CLIFTON">
+						<option value="CLONCURRY">
+						<option value="COBAR">
+						<option value="COBDEN">
+						<option value="COCKATOO ISLAND">
+						<option value="COEN">
+						<option value="COFFS HARBOUR">
+						<option value="COLAC">
+						<option value="COLDSTREAM">
+						<option value="COOBER PEDY">
+						<option value="COOKTOWN">
+						<option value="COONAMBLE">
+						<option value="COOTAMUNDRA">
+						<option value="COWRA">
+						<option value="CROYDON">
+						<option value="CUNNAMULLA">
+						<option value="DARWIN">
+						<option value="DENILIQUIN">
+						<option value="DERBY">
+						<option value="DEVONPORT">
+						<option value="DONNINGTON AIRPARK">
+						<option value="DUBBO">
+						<option value="DUNWICH">
+						<option value="ECHUCA">
+						<option value="ELCHO ISLAND">
+						<option value="ELROSE">
+						<option value="EMERALD">
+						<option value="EMKAYTEE">
+						<option value="ESPERANCE">
+						<option value="EUROA">
+						<option value="FLINDERS ISLAND">
+						<option value="FORREST">
+						<option value="GAWLER">
+						<option value="GAYNDAH">
+						<option value="GEORGETOWN (QLD)">
+						<option value="GERALDTON">
+						<option value="GLADSTONE">
+						<option value="GOLD COAST">
+						<option value="GOOLWA">
+						<option value="GOONDIWINDI">
+						<option value="GOULBURN">
+						<option value="GOVE">
+						<option value="GRIFFITH">
+						<option value="GROOTE EYLANDT">
+						<option value="GUNNEDAH">
+						<option value="GYMPIE">
+						<option value="HALLS CREEK">
+						<option value="HAMILTON ISLAND">
+						<option value="HAMILTON">
+						<option value="HAWKER">
+						<option value="HAY">
+						<option value="HERVEY BAY">
+						<option value="HOBART/CAMBRIDGE">
+						<option value="HOOKER CREEK">
+						<option value="HORN ISLAND">
+						<option value="HORSHAM">
+						<option value="HUGHENDEN">
+						<option value="HUNGERFORD">
+						<option value="INGHAM">
+						<option value="INNAMINCKA TOWNSHIP">
+						<option value="INNAMINCKA">
+						<option value="INVERELL">
+						<option value="JABIRU">
+						<option value="JAMESTOWN">
+						<option value="JINDABYNE">
+						<option value="KALGOORLIE-BOULDER">
+						<option value="KALUMBURU">
+						<option value="KARRATHA">
+						<option value="KEMPSEY">
+						<option value="KERANG">
+						<option value="KINGAROY">
+						<option value="KUNUNURRA">
+						<option value="KYNETON">
+						<option value="LATROBE VALLEY">
+						<option value="LAUNCESTON">
+						<option value="LEIGH CREEK">
+						<option value="LEONGATHA">
+						<option value="LEONORA">
+						<option value="LETHBRIDGE AIRPORT">
+						<option value="LIGHTNING RIDGE">
+						<option value="LILYDALE">
+						<option value="LISMORE">
+						<option value="LOCKHART RIVER">
+						<option value="LONGREACH">
+						<option value="LORD HOWE ISLAND">
+						<option value="LYNDOCH">
+						<option value="MACKAY">
+						<option value="MAITLAND (NSW)">
+						<option value="MAITLAND (SA)">
+						<option value="MALLACOOTA">
+						<option value="MANGALORE">
+						<option value="MANINGRIDA">
+						<option value="MANJIMUP">
+						<option value="MAREEBA">
+						<option value="MARREE">
+						<option value="MARYBOROUGH (QLD)">
+						<option value="MCARTHUR RIVER MINE">
+						<option value="MEEKATHARRA">
+						<option value="MELBOURNE/ESSENDON">
+						<option value="MELBOURNE/MOORABBIN">
+						<option value="MELTON">
+						<option value="MERIMBULA">
+						<option value="MERREDIN">
+						<option value="MILDURA">
+						<option value="MOREE">
+						<option value="MORUYA">
+						<option value="MOUNT GAMBIER">
+						<option value="MOUNT ISA">
+						<option value="MOUNT KEITH">
+						<option value="MUDGEE">
+						<option value="MURRAY BRIDGE">
+						<option value="MURRAY FIELD">
+						<option value="MURWILLUMBAH">
+						<option value="NAGAMBIE-WIRRATE">
+						<option value="NARACOORTE">
+						<option value="NARRABRI">
+						<option value="NARRANDERA">
+						<option value="NARROMINE">
+						<option value="NEWMAN">
+						<option value="NHILL">
+						<option value="NORMANTON">
+						<option value="NORTHAM">
+						<option value="NORTHERN PENINSULA">
+						<option value="NULLARBOR MOTEL">
+						<option value="OAKEY">
+						<option value="ORANGE">
+						<option value="PARKES">
+						<option value="PENFIELD">
+						<option value="PERTH/JANDAKOT">
+						<option value="PETERBOROUGH/GREAT OCEAN ROAD">
+						<option value="PORT AUGUSTA">
+						<option value="PORT HEDLAND">
+						<option value="PORT LINCOLN">
+						<option value="PORT MACQUARIE">
+						<option value="PORT PIRIE">
+						<option value="PORTLAND">
+						<option value="PROSERPINE/WHITSUNDAY COAST">
+						<option value="PUNGALINA">
+						<option value="QUILPIE">							
+						<option value="REDCLIFFE">
+						<option value="RENMARK">
+						<option value="ROCKHAMPTON">
+						<option value="ROMA">
+						<option value="ROWSLEY/BROOKS LANDING">
+						<option value="RYLSTONE AIRPARK">
+						<option value="SCONE">
+						<option value="SHELLHARBOUR AIRPORT">
+						<option value="SHEPPARTON">
+						<option value="SHUTE HARBOUR/WHITSUNDAY">
+						<option value="SOMERSBY">
+						<option value="STAWELL">
+						<option value="SUNSHINE COAST">
+						<option value="SWAN HILL">
+						<option value="SYDNEY/BANKSTOWN">
+						<option value="TAMBO">
+						<option value="TAMWORTH">
+						<option value="TAREE">
+						<option value="TEMORA">
+						<option value="TENNANT CREEK">
+						<option value="THANGOOL">
+						<option value="THARGOMINDAH">
+						<option value="TIBOOBURRA">
+						<option value="TINDAL">
+						<option value="TOCUMWAL">
+						<option value="TOORADIN">
+						<option value="TOOWOOMBA">
+						<option value="TOWNSVILLE/TOWNSVILLE">
+						<option value="TRUSCOTT-MUNGALALU">
+						<option value="TUMUT">
+						<option value="TYABB">
+						<option value="VAN ROOK STATION">
+						<option value="VICTORIA RIVER DOWNS">
+						<option value="WAGGA WAGGA">
+						<option value="WALGETT">
+						<option value="WANGARATTA">
+						<option value="WARBURTON">
+						<option value="WARRACKNABEAL">
+						<option value="WARRNAMBOOL">
+						<option value="WARWICK">
+						<option value="WATTS BRIDGE">
+						<option value="WEDDERBURN">
+						<option value="WEIPA">
+						<option value="WENTWORTH">
+						<option value="WEST SALE">
+						<option value="WHITE CLIFFS">
+						<option value="WHITE GUM">
+						<option value="WHYALLA">
+						<option value="WILLIAM CREEK">
+						<option value="WINDORAH">
+						<option value="WINTON">
+						<option value="WUDINNA">
+						<option value="WYNYARD">
+						<option value="YARRAM">
+						<option value="YARRAWONGA">
+						<option value="YOUNG">				
+					</datalist>	
+					
+					<br><br>
+						
+					<label>&nbsp;Aircraft Range (nm)&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<input type="text" size="4" name="range" value="200" autocomplete="off">&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;	
+						
+					<br><br>
+						
+					<label>&nbsp;</label>
+					<input type="submit" name="action" value="Generate New Route">
+					
+					<br><br>
+						
+					<input type="hidden" name="login_status" value="<?php echo $login_status?>">
+					<input type="hidden" name="username" value="<?php echo $username?>">
+			
+					<label>&nbsp;</label>
+					<input type="submit" name="action" value="Show Route List (Session Cookie)">
+					
+					<br><br>
+			
+					<label>&nbsp;</label>
+					<input type="submit" name="action" value="Retrieve Old Routes (Requires Login/Register)">			
+				</p>
+			
+			</form>			
+			
 		<?php
 		}
 		?>			
@@ -883,6 +1443,6 @@ PURPOSE: 		To practice web app development skills learnt in first yer of IT degr
 		&copy; Copyright 2021. All rights reserved <br>
 		<a href="mailto:donaldewancameron@gmail.com">donaldewancameron@gmail.com</a>
 	</footer>
-	
+
 </body>
 </html>

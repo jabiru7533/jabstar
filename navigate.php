@@ -82,6 +82,15 @@ function generate_route($aircraft_range, $distance, $departure_coordinates, $des
 INPUTS: departure point name & gps coordinates, destination name & gps coordinates, bearing of destination from departure point, aircraft range
 OUTPUTS: no_fuel_stops flag (= 0 if journey requires NO fuel stops), calculate_last_leg_flag (= 0 if journey DOES have fuel stops),
 		new_route (this is a 2 dimensional array - rows = journey legs / columns = Name, Bearing & Distance of the waypoint for a given journey leg)	
+PROCESSING: If the route distance is greater than the aircraft range, attempt to find fuel stops.
+				Calculate the bearing and distance from the departure point to ALL OTHER WAYPOINTS in the database.
+					For each one: if the distance is less than the aircraft range AND the bearing (to it from the departurue point) is different from the overall bearing by less than the BEARING DIFFERENCE CONSTANT,
+					consider this as a potential fuel stop.
+				If there are no suitable fuel stops, write a suitable error message.	
+				From the potential fuel stops, select the one which has the greatest distance.
+				Now, treat the new fuel stop as the 'departure point' and repeat the process (i.e. look for a fuel stop with the greatest distance - but less than the aircraft range - where the bearing to it is less than
+					the BEARING DIFFERENCE CONSTANT different from the bearing to the destination from the current 'departure point' i.e. the previous fuel stop).
+				Keep doing this until you have a fuel stop whose distance from the overall destination is less than the aircrafts range.	
 */
 			
 //Find Fuel Stops where necessary
